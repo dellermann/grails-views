@@ -52,6 +52,10 @@ class TestGsonController {
         respond one:'two'
     }
 
+    def testRespondWithDate() {
+        respond one: new Date(0)
+    }
+
     def testLinks() {
 
     }

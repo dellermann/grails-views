@@ -65,6 +65,9 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
+        json:
+            generator:
+                dateFormat: yyyy-MM-dd
 ---
 hibernate:
     cache:

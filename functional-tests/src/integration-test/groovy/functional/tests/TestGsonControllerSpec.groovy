@@ -28,8 +28,16 @@ class TestGsonControllerSpec extends GebSpec {
 
         then:"The JSON view is rendered"
         content == '{"one":"two"}'
-
     }
+
+    void "Test that responding with a custom date format works"() {
+        when:"When JSON is requested"
+        def content = new URL("${baseUrl}/testGson/testRespondWithDate.json").text
+
+        then:"The JSON view is rendered"
+        content == '{"one":"1970-01-01"}'
+    }
+
     void "Test that it is possible to use the template engine directly"() {
         when:"When JSON is requested"
         def content = new URL("${baseUrl}/testGson/testTemplateEngine").text
