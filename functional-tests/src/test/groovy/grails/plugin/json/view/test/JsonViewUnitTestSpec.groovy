@@ -17,4 +17,13 @@ class JsonViewUnitTestSpec extends Specification implements JsonViewUnitTest {
         result.json.name == "Cantona"
         result.json.sport == 'football'
     }
+
+    void "it can render a property called 'mappings'"() {
+        when:
+        def result = render(view: '/player/mappings', model: [player: new Player(name: "Cantona")])
+
+        then:"the result is correct"
+        result.json.name == "Cantona"
+        result.json.mapping.foo == 'bar'
+    }
 }

@@ -1,0 +1,11 @@
+import functional.tests.Player
+
+model {
+    Player player
+}
+
+def foo = g.render([foo: "bar"] as Object)
+
+json g.render(player) {
+    mappings foo
+}
